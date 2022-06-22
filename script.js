@@ -41,7 +41,6 @@ let buttonSeven = document.getElementById('7')
 let buttonEight = document.getElementById('8')
 let buttonNine = document.getElementById('9')
 let buttonZero = document.getElementById('0')
-let buttonClear = document.getElementById('clear')
 let buttonDecimal = document.getElementById('decimal')
 
 let inputs = ""
@@ -251,14 +250,6 @@ buttonZero.addEventListener("click", () => {
     }
 })
 
-buttonClear.addEventListener("click", () => {
-    currentNumbers.innerText = "";
-    pastNumbers.innerText = "";
-    inputs = "";
-    inputsTwo = "";
-    equal = "";
-})
-
 
 // operator buttons
 
@@ -267,6 +258,8 @@ let subtractButton = document.getElementById('subtract')
 let multiplyButton = document.getElementById('multiply')
 let divideButton = document.getElementById('divide')
 let equalButton = document.getElementById('equal') 
+let buttonDelete = document.getElementById('backspace')
+let buttonClear = document.getElementById('clear')
 
 addButton.addEventListener("click", () => {
     pastNumbers.innerText = currentNumbers.innerText;
@@ -425,3 +418,21 @@ equalButton.addEventListener("click", () => {
 }) 
 
 let equal = ""
+
+buttonClear.addEventListener("click", () => {
+    currentNumbers.innerText = "";
+    pastNumbers.innerText = "";
+    inputs = "";
+    inputsTwo = "";
+    equal = "";
+})
+
+buttonDelete.addEventListener("click", () => {
+    currentNumbers.innerText = currentNumbers.innerText.slice(0, -1);
+    pastNumbers.innerText = pastNumbers.innerText.slice(0, -1);
+    if(inputsTwo == "") {
+        inputs = inputs.slice(0, -1)
+    } else if (inputsTwo != "") {
+        inputsTwo = inputsTwo.slice(0, -1)
+    }
+})
