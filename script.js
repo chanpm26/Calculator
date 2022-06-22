@@ -1,3 +1,5 @@
+//functions 
+
 const add = function(a, b) {
     return a + b
 }
@@ -17,13 +19,17 @@ const divide = function(a, b) {
 const operate = function(operator, inputOne, inputTwo) {
     inputOne = Number(inputOne);
     inputTwo = Number(inputTwo);
-    return operator(inputOne, inputTwo)        
+    let total = operator(inputOne, inputTwo)    
+    return total.toFixed(2)    
 }
-    
+
+//display
 
 let display = document.getElementById('display')
 let pastNumbers = document.getElementById('pastNumbers')
 let currentNumbers = document.getElementById('currentNumbers')
+
+// number buttons
 
 let buttonOne = document.getElementById('1')
 let buttonTwo = document.getElementById('2')
@@ -38,138 +44,229 @@ let buttonZero = document.getElementById('0')
 let buttonClear = document.getElementById('clear')
 let buttonDecimal = document.getElementById('decimal')
 
-buttonDecimal.addEventListener("click", () => {
-    if (inputs.includes(".") == true && (display.innerText.includes("\u00A0") != true) || inputsTwo.includes(".") == true) {
+let inputs = ""
+let inputsTwo = ""
 
+buttonDecimal.addEventListener("click", () => {
+    if (inputs.includes(".") == true && (currentNumbers.innerText.includes("\u00A0") != true) || inputsTwo.includes(".") == true) {
     } else if ((display.innerText.slice(-1) != "\u00A0") && (display.innerText.includes("\u00A0") != true)) {
         currentNumbers.innerText += ".";
         inputs += ".";
-        } else {
+    } else {
         currentNumbers.innerText += ".";
         inputsTwo += ".";
         pastNumbers.innerText = currentNumbers.innerText
-        }
-    }) 
+    }
+}) 
 
 buttonOne.addEventListener("click", () => {
-    if ((display.innerText.slice(-1) != "\u00A0") && (display.innerText.includes("\u00A0") != true) ) {
-    currentNumbers.innerText += 1;
-    inputs += 1;
+    if (equal.includes("called") == true) {
+        pastNumbers.innerText = currentNumbers.innerText;
+        currentNumbers.innerText = ""
+        currentNumbers.innerText += 1;
+        inputs = "";
+        inputs += 1;
+        equal = "";
+    } else if ((display.innerText.slice(-1) != "\u00A0") && (display.innerText.includes("\u00A0") != true) ) {
+        currentNumbers.innerText += 1;
+        pastNumbers.innerText = currentNumbers.innerText;
+        inputs += 1;
     } else {
-    currentNumbers.innerText += 1;
-    inputsTwo += 1;
-    pastNumbers.innerText = currentNumbers.innerText
+        currentNumbers.innerText += 1;
+        pastNumbers.innerText = currentNumbers.innerText
+        inputsTwo += 1;
     }
 })
+
 buttonTwo.addEventListener("click", () => {
-    if ((display.innerText.slice(-1) != "\u00A0")  && (display.innerText.includes("\u00A0") != true) ){
-    currentNumbers.innerText += 2;
-    inputs += 2;
+    if (equal.includes("called") == true) {
+        pastNumbers.innerText = currentNumbers.innerText;
+        currentNumbers.innerText = ""
+        currentNumbers.innerText += 2;
+        inputs = "";
+        inputs += 2;
+        equal = "";
+    } else if ((display.innerText.slice(-1) != "\u00A0") && (display.innerText.includes("\u00A0") != true) ) {
+        currentNumbers.innerText += 2;
+        pastNumbers.innerText = currentNumbers.innerText;
+        inputs += 2;
     } else {
-    currentNumbers.innerText += 2;
-    inputsTwo += 2;
-    pastNumbers.innerText = currentNumbers.innerText
+        currentNumbers.innerText += 2;
+        pastNumbers.innerText = currentNumbers.innerText;
+        inputsTwo += 2;
     }
 })
 
 buttonThree.addEventListener("click", () => {
-    if ((display.innerText.slice(-1) != "\u00A0")  && (display.innerText.includes("\u00A0") != true)) {
-        currentNumbers.innerText += 3; 
+    if (equal.includes("called") == true) {
+        pastNumbers.innerText = currentNumbers.innerText;
+        currentNumbers.innerText = ""
+        currentNumbers.innerText += 3;
+        inputs = "";
+        inputs += 3;
+        equal = "";
+    } else if ((display.innerText.slice(-1) != "\u00A0") && (display.innerText.includes("\u00A0") != true) ) {
+        currentNumbers.innerText += 3;
+        pastNumbers.innerText = currentNumbers.innerText;
         inputs += 3;
     } else {
-        currentNumbers.innerText += 3; 
+        currentNumbers.innerText += 3;
+        pastNumbers.innerText = currentNumbers.innerText;
         inputsTwo += 3;
-        pastNumbers.innerText = currentNumbers.innerText
     }
 })
+
 buttonFour.addEventListener("click", () => {
-    if ((display.innerText.slice(-1) != "\u00A0")  && (display.innerText.includes("\u00A0") != true) ) {
-        currentNumbers.innerText += 4; 
-    inputs += 4;
+    if (equal.includes("called") == true) {
+        pastNumbers.innerText = currentNumbers.innerText;
+        currentNumbers.innerText = ""
+        currentNumbers.innerText += 4;
+        inputs = "";
+        inputs += 4;
+        equal = "";
+    } else if ((display.innerText.slice(-1) != "\u00A0") && (display.innerText.includes("\u00A0") != true) ) {
+        currentNumbers.innerText += 4;
+        pastNumbers.innerText = currentNumbers.innerText;
+        inputs += 4;
     } else {
-        currentNumbers.innerText += 4; 
-    inputsTwo += 4;
-    pastNumbers.innerText = currentNumbers.innerText
+        currentNumbers.innerText += 4;
+        pastNumbers.innerText = currentNumbers.innerText;
+        inputsTwo += 4;
     }
 })
+
 buttonFive.addEventListener("click", () => {
-    if ((display.innerText.slice(-1) != "\u00A0")  && (display.innerText.includes("\u00A0") != true)) {
-        currentNumbers.innerText += 5; 
-    inputs += 5;
+    if (equal.includes("called") == true) {
+        pastNumbers.innerText = currentNumbers.innerText;
+        currentNumbers.innerText = ""
+        currentNumbers.innerText += 5;
+        inputs = "";
+        inputs += 5;
+        equal = "";
+    } else if ((display.innerText.slice(-1) != "\u00A0") && (display.innerText.includes("\u00A0") != true) ) {
+        currentNumbers.innerText += 5;
+        pastNumbers.innerText = currentNumbers.innerText;
+        inputs += 5;
     } else {
-        currentNumbers.innerText += 5; 
-    inputsTwo += 5;
-    pastNumbers.innerText = currentNumbers.innerText
+        currentNumbers.innerText += 5;
+        pastNumbers.innerText = currentNumbers.innerText;
+        inputsTwo += 5;
     }
 })
+
 buttonSix.addEventListener("click", () => {
-    if ((display.innerText.slice(-1) != "\u00A0")  && (display.innerText.includes("\u00A0") != true)) {
-        currentNumbers.innerText += 6; 
-    inputs += 6;
+    if (equal.includes("called") == true) {
+        pastNumbers.innerText = currentNumbers.innerText;
+        currentNumbers.innerText = ""
+        currentNumbers.innerText += 6;
+        inputs = "";
+        inputs += 6;
+        equal = "";
+    } else if ((display.innerText.slice(-1) != "\u00A0") && (display.innerText.includes("\u00A0") != true) ) {
+        currentNumbers.innerText += 6;
+        pastNumbers.innerText = currentNumbers.innerText;
+        inputs += 6;
     } else {
-        currentNumbers.innerText += 6; 
+        currentNumbers.innerText += 6;
+        pastNumbers.innerText = currentNumbers.innerText;
         inputsTwo += 6;
-        pastNumbers.innerText = currentNumbers.innerText
     }
 })
+
 buttonSeven.addEventListener("click", () => {
-    if ((display.innerText.slice(-1) != "\u00A0")  && (display.innerText.includes("\u00A0") != true)) {
+    if (equal.includes("called") == true) {
+        pastNumbers.innerText = currentNumbers.innerText;
+        currentNumbers.innerText = ""
         currentNumbers.innerText += 7;
-    inputs += 7;
+        inputs = "";
+        inputs += 7;
+        equal = "";
+    } else if ((display.innerText.slice(-1) != "\u00A0") && (display.innerText.includes("\u00A0") != true) ) {
+        currentNumbers.innerText += 7;
+        pastNumbers.innerText = currentNumbers.innerText;
+        inputs += 7;
     } else {
-        currentNumbers.innerText += 7; 
+        currentNumbers.innerText += 7;
+        pastNumbers.innerText = currentNumbers.innerText;
         inputsTwo += 7;
-        pastNumbers.innerText = currentNumbers.innerText
     }
 })
+
 buttonEight.addEventListener("click", () => {
-    if ((display.innerText.slice(-1) != "\u00A0")  && (display.innerText.includes("\u00A0") != true)) {
-        currentNumbers.innerText += 8; 
-    inputs += 8;
+    if (equal.includes("called") == true) {
+        pastNumbers.innerText = currentNumbers.innerText;
+        currentNumbers.innerText = ""
+        currentNumbers.innerText += 8;
+        inputs = "";
+        inputs += 8;
+        equal = "";
+    } else if ((display.innerText.slice(-1) != "\u00A0") && (display.innerText.includes("\u00A0") != true) ) {
+        currentNumbers.innerText += 8;
+        pastNumbers.innerText = currentNumbers.innerText;
+        inputs += 8;
     } else {
-        currentNumbers.innerText += 8; 
+        currentNumbers.innerText += 8;
+        pastNumbers.innerText = currentNumbers.innerText;
         inputsTwo += 8;
-        pastNumbers.innerText = currentNumbers.innerText
     }
 })
+
 buttonNine.addEventListener("click", () => {
-    if ((display.innerText.slice(-1) != "\u00A0") && (display.innerText.includes("\u00A0") != true)) {
-        currentNumbers.innerText += 9; 
+    if (equal.includes("called") == true) {
+        pastNumbers.innerText = currentNumbers.innerText;
+        currentNumbers.innerText = ""
+        currentNumbers.innerText += 9;
+        inputs = "";
+        inputs += 9;
+        equal = "";
+    } else if ((display.innerText.slice(-1) != "\u00A0") && (display.innerText.includes("\u00A0") != true) ) {
+        currentNumbers.innerText += 9;
+        pastNumbers.innerText = currentNumbers.innerText;
         inputs += 9;
     } else {
-        currentNumbers.innerText += 9; 
+        currentNumbers.innerText += 9;
+        pastNumbers.innerText = currentNumbers.innerText;
         inputsTwo += 9;
-        pastNumbers.innerText = currentNumbers.innerText
     }
 })
+
 buttonZero.addEventListener("click", () => {
     if ((display.innerText.slice(-2) == "/\u00A0") && (display.innerText.includes("\u00A0") != true)) {
         alert("Error! Cannot divide by 0")
-    } else if (display.innerText.slice(-1) != "\u00A0"){
+    } else if (equal.includes("called") == true) {
+        pastNumbers.innerText = currentNumbers.innerText;
+        currentNumbers.innerText = ""
         currentNumbers.innerText += 0;
+        inputs = "";
+        inputs += 0;
+        equal = "";
+    } else if (display.innerText.slice(-1) != "\u00A0" && (display.innerText.includes("\u00A0") != true)){
+        currentNumbers.innerText += 0;
+        pastNumbers.innerText = currentNumbers.innerText;
         inputs += 0;
     } else {
         currentNumbers.innerText += 0;
+        pastNumbers.innerText = currentNumbers.innerText;
         inputsTwo += 0;
-        pastNumbers.innerText = currentNumbers.innerText
     }
-    console.log(inputs)
 })
+
 buttonClear.addEventListener("click", () => {
     currentNumbers.innerText = "";
     pastNumbers.innerText = "";
     inputs = "";
     inputsTwo = "";
-    console.log(inputs)
+    equal = "";
 })
 
-let inputs = ""
-let inputsTwo = ""
+
+// operator buttons
 
 let addButton = document.getElementById('add')
 let subtractButton = document.getElementById('subtract')
 let multiplyButton = document.getElementById('multiply')
 let divideButton = document.getElementById('divide')
+let equalButton = document.getElementById('equal') 
 
 addButton.addEventListener("click", () => {
     pastNumbers.innerText = currentNumbers.innerText;
@@ -198,6 +295,7 @@ addButton.addEventListener("click", () => {
     } else {
      if (display.innerText.slice(-1) != "\u00A0"){
         currentNumbers.innerText += " +" + "\u00A0";
+        equal = "";
         }
 }})
 
@@ -205,6 +303,8 @@ subtractButton.addEventListener("click", () => {
     pastNumbers.innerText = currentNumbers.innerText;
     if (inputs == "") {
         alert("Click a number first!")
+    } else if (display.innerText.slice(-1) == "\u00A0"){
+        currentNumbers.innerText += "-";
     } else if (display.innerText.includes("+") === true ) {
         let total = operate(add, inputs, inputsTwo);
         currentNumbers.innerText = total + " -" + "\u00A0";
@@ -227,8 +327,9 @@ subtractButton.addEventListener("click", () => {
         inputsTwo = "";
     } else {
     if (display.innerText.slice(-1) != "\u00A0"){
+        equal = "";
         currentNumbers.innerText += " -" + "\u00A0";
-}
+    }
 }})
 
 multiplyButton.addEventListener("click", () => {
@@ -257,8 +358,9 @@ multiplyButton.addEventListener("click", () => {
         inputsTwo = "";
     } else {
     if (display.innerText.slice(-1) != "\u00A0"){
+        equal = "";
         currentNumbers.innerText += " *" + "\u00A0";
-}
+    }
 }})
 
 divideButton.addEventListener("click", () => {
@@ -287,32 +389,39 @@ divideButton.addEventListener("click", () => {
         inputsTwo = "";
     } else {
     if (display.innerText.slice(-1) != "\u00A0"){ 
+        equal = "";
         currentNumbers.innerText += " /" + "\u00A0";
-}
+    }
 }})
 
-let equalButton = document.getElementById('equal') 
 equalButton.addEventListener("click", () => {
+    pastNumbers.innerText = currentNumbers.innerText;
     if (display.innerText.includes("\u00A0") === false || inputsTwo == "") {
     } else if (display.innerText.includes("+") === true ) {
         let total = operate(add, inputs, inputsTwo)
-        currentNumbers.innerText = total.toFixed(2);
+        currentNumbers.innerText = total;
         inputs = total;
         inputsTwo = "";
+        equal = "called";
     } else if (display.innerText.includes("-") === true ) {
         let total = operate(subtract, inputs, inputsTwo)
-        currentNumbers.innerText = total.toFixed(2);
+        currentNumbers.innerText = total;
         inputs = total;
         inputsTwo = "";
+        equal = "called";
     } else if (display.innerText.includes("*") === true) {
         let total = operate(multiply, inputs, inputsTwo)
-        currentNumbers.innerText = total.toFixed(2);
+        currentNumbers.innerText = total;
         inputs = total;
         inputsTwo = "";
+        equal = "called";
     } else if (display.innerText.includes("/") === true) {
         let total = operate(divide, inputs, inputsTwo)
-        currentNumbers.innerText = total.toFixed(2);
+        currentNumbers.innerText = total;
         inputs = total;
         inputsTwo = "";
-}
+        equal = "called";
+    }
 }) 
+
+let equal = ""
