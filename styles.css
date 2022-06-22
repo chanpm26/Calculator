@@ -1,0 +1,62 @@
+
+html, body {
+    height: 100%;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    display: table-cell;
+    vertical-align: middle;
+    width: 500px;
+    height: 10px;
+}
+
+#display {
+    border: 5px solid black;
+    text-align: right;
+    margin: 15px 25px;
+   box-sizing: border-box;
+   padding-right: 10px;
+   height: 130px;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+}
+
+#pastNumbers {
+    justify-self: stretch;
+    height: 65px;
+    font-size: 25px;
+    padding-top: 10px;
+}
+
+#currentNumbers {
+    justify-self: stretch;
+    height: 65px;
+    font-size: 60px;
+    padding-bottom: 10px;
+}
+
+#numbers {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin: 15px 25px;
+}
+
+#numbers > button {
+    height: 100px;
+    font-size: 2rem;
+    font-weight: bold;
+    border-radius: 20px;
+}
+
+#numbers > button:hover {
+    opacity: 70%;
+}
+
+
