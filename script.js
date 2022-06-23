@@ -389,7 +389,7 @@ divideButton.addEventListener("click", () => {
 
 equalButton.addEventListener("click", () => {
     pastNumbers.innerText = currentNumbers.innerText;
-    if (display.innerText.includes("\u00A0") === false || inputsTwo == "") {
+    if (display.innerText.includes("\u00A0") === false || inputsTwo == "" || inputsTwo == ".") {
     } else if (display.innerText.includes("+") === true ) {
         let total = operate(add, inputs, inputsTwo)
         currentNumbers.innerText = total;
@@ -434,5 +434,13 @@ buttonDelete.addEventListener("click", () => {
         inputs = inputs.slice(0, -1)
     } else if (inputsTwo != "") {
         inputsTwo = inputsTwo.slice(0, -1)
+    }
+})
+
+document.addEventListener('keydown', function(key) {
+    if (key.key.match(/\d/) || key.key.match()) {
+    currentNumbers.innerText += `${key.key}`;
+    inputs += `${key.key}`;
+    pastNumbers.innerText = currentNumbers.innerText;
     }
 })
