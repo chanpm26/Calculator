@@ -436,11 +436,3 @@ buttonDelete.addEventListener("click", () => {
         inputsTwo = inputsTwo.slice(0, -1)
     }
 })
-
-document.addEventListener('keydown', function(key) {
-    if (key.key.match(/\d/) || key.key.match()) {
-    currentNumbers.innerText += `${key.key}`;
-    inputs += `${key.key}`;
-    pastNumbers.innerText = currentNumbers.innerText;
-    }
-})
